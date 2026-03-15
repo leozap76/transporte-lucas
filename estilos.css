@@ -1,0 +1,372 @@
+
+        :root {
+            --primary: #0f172a;    
+            --primary-light: #1e293b;
+            --accent: #b89352;     
+            --accent-light: #d4af37;
+            --bg-light: #f8fafc;   
+            --white: #ffffff;
+            --text-main: #334155;
+            --whatsapp: #25d366;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--white);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-contact-btn {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-contact-btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+            /* Priorizamos una imagen de carretera de alta calidad para el impacto visual inicial */
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 8vw, 5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1;
+            font-weight: 900;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--accent), var(--accent-light));
+            color: var(--primary);
+            padding: 20px 50px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            transition: 0.4s ease;
+            box-shadow: 0 10px 20px rgba(184, 147, 82, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(184, 147, 82, 0.5);
+            filter: brightness(1.1);
+        }
+
+        /* --- SECCIÓN SERVICIOS --- */
+        .services {
+            padding: 120px 5%;
+            background: radial-gradient(circle at top right, #f8fafc, #ffffff);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            padding: 60px 40px;
+            background: var(--white);
+            border-radius: 20px;
+            transition: 0.5s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(15, 23, 64, 0.1);
+        }
+
+        .service-card i {
+            font-size: 3.5rem;
+            background: linear-gradient(var(--accent), var(--accent-light));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+
+        /* --- SECCIÓN UNIDAD (Con Parallax o Imagen Impactante) --- */
+        .unit {
+            padding: 100px 5%;
+            background-color: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 80px;
+            position: relative;
+        }
+
+        .unit-image-container {
+            flex: 1;
+            min-width: 350px;
+            position: relative;
+        }
+
+        .unit-image-container img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+            transform: rotate(-2deg);
+            transition: 0.5s;
+        }
+
+        .unit-image-container:hover img {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .unit-info {
+            flex: 1;
+            min-width: 350px;
+        }
+
+        .unit-info h2 {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .unit-features {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .unit-features li {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .unit-features i {
+            color: var(--accent);
+            margin-right: 12px;
+        }
+
+        /* --- FORMULARIO LLAMATIVO --- */
+        .contact {
+            padding: 120px 5%;
+            background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%);
+        }
+
+        .contact-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+        }
+
+        .contact-info-sidebar {
+            flex: 1;
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px;
+            min-width: 350px;
+        }
+
+        .contact-form-side {
+            flex: 1.5;
+            padding: 60px;
+            min-width: 350px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group.full { grid-column: span 2; }
+
+        .contact-form-side input, .contact-form-side textarea {
+            width: 100%;
+            padding: 18px;
+            background: #f8fafc;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .contact-form-side input:focus, .contact-form-side textarea:focus {
+            background: var(--white);
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: var(--accent);
+            border: none;
+            padding: 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* --- BOTÓN WHATSAPP ANIMADO --- */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: var(--whatsapp);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full { grid-column: span 1; }
+            .unit-features { grid-template-columns: 1fr; }
+            .contact-info-sidebar, .contact-form-side { padding: 40px 25px; }
+            .hero h1 { font-size: 3rem; }
+        }
